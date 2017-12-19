@@ -49,6 +49,7 @@ public class EmployeeAggrApp {
                 Histogram.Bucket groupByJoinDateBucket = hisBucket.next();
                 System.out.println(groupByJoinDateBucket.getKey() + ":" +groupByJoinDateBucket.getDocCount());
 
+
                 Avg avg = (Avg) groupByJoinDateBucket.getAggregations().asMap().get("avg_salary");
                 System.out.println(avg.getValue());
             }
