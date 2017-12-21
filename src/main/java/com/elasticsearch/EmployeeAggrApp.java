@@ -19,8 +19,6 @@ import java.util.Map;
 
 /**
  * Created by liyongguan on 2017/12/19.
- * 分组查询
- * 先按照年分组，然后在国家分组内再按照入职日期分组，最后计算分组后的平均薪水
  */
 public class EmployeeAggrApp {
     public static void main(String[] args) throws Exception{
@@ -48,8 +46,6 @@ public class EmployeeAggrApp {
             while (hisBucket.hasNext()){
                 Histogram.Bucket groupByJoinDateBucket = hisBucket.next();
                 System.out.println(groupByJoinDateBucket.getKey() + ":" +groupByJoinDateBucket.getDocCount());
-
-
                 Avg avg = (Avg) groupByJoinDateBucket.getAggregations().asMap().get("avg_salary");
                 System.out.println(avg.getValue());
             }
