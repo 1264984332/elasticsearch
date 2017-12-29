@@ -22,7 +22,9 @@ public class EmployeeCRUDApp {
 
 	public static void main(String[] args) throws  Exception{
 		Settings settings = Settings.builder()
-				.put("cluster.name","es").build();
+				.put("cluster.name","es")
+				.put("client.transport.sniff",true)//集群节点自动探查
+				.build();
 		TransportClient client = new PreBuiltTransportClient(settings)
 				.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("172.16.36.120"),9300));
 	//	addEmploy(client);
