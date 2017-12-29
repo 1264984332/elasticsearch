@@ -12,7 +12,7 @@ import java.util.zip.CheckedInputStream;
 /**
  * Created by liyongguan on 2017/12/21.
  */
-public class unzip {
+public class Unzip {
 
     static String separator = File.separator;
     static String zipPath = "E:"+separator+"Test1"+separator+"Test.zip";//需要解压的压缩文件
